@@ -40,7 +40,7 @@ const start = async () => {
 
       _.map(questions, (question) => {
         records.push({
-          c1: doc.title,
+          c1: doc.details.title,
           c2: section.title,
           c3: question.title,
         })
