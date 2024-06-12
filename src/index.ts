@@ -15,8 +15,9 @@ if (!fs.existsSync(dir)) {
 const csvWriter = createObjectCsvWriter({
   path: `${dir}/${org}.csv`,
   header: [
-    { id: 'c1', title: 'TEMPLATE' },
-    { id: 'c2', title: 'QUESTION' },
+    { id: 'c1', title: 'TITLE' },
+    { id: 'c2', title: 'TEMPLATE' },
+    { id: 'c3', title: 'QUESTION' },
   ],
 })
 
@@ -39,8 +40,9 @@ const start = async () => {
 
       _.map(questions, (question) => {
         records.push({
-          c1: section.title,
-          c2: question.title,
+          c1: doc.details.title,
+          c2: section.title,
+          c3: question.title,
         })
       })
     })
